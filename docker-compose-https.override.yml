@@ -6,6 +6,9 @@ services:
       WEBLATE_EMAIL_HOST_USER: dev@team.bahai.org
       WEBLATE_EMAIL_HOST_PASSWORD: "${WEBLATE_EMAIL_HOST_PASSWORD}"
       WEBLATE_EMAIL_PORT: 587
+      WEBLATE_ADMIN_EMAIL: dev@team.bahai.org
+      WEBLATE_SERVER_EMAIL: dev@team.bahai.org
+      WEBLATE_DEFAULT_FROM_EMAIL: dev@team.bahai.org
       WEBLATE_SITE_DOMAIN: translate.bahai.org
       WEBLATE_ADMIN_PASSWORD: "${WEBLATE_ADMIN_PASSWORD}"
       WEBLATE_REQUIRE_LOGIN: 1
