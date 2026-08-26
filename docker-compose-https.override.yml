@@ -19,7 +19,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2.5G
+          memory: 3G
   https-portal:
     environment:
       DOMAINS: 'translate.bahai.org -> http://weblate:8080'
