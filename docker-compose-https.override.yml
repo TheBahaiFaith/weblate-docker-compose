@@ -1,0 +1,30 @@
+version: '3'
+services:
+  weblate:
+    environment:
+      WEBLATE_EMAIL_HOST: smtp.gmail.com
+      WEBLATE_EMAIL_HOST_USER: dev@team.bahai.org
+      WEBLATE_EMAIL_HOST_PASSWORD: "${WEBLATE_EMAIL_HOST_PASSWORD}"
+      WEBLATE_EMAIL_PORT: 587
+      WEBLATE_SITE_DOMAIN: translate.bahai.org
+      WEBLATE_ADMIN_PASSWORD: "${WEBLATE_ADMIN_PASSWORD}"
+      WEBLATE_REQUIRE_LOGIN: 1
+      WEBLATE_GITHUB_CREDENTIALS: >
+        {
+          "api.github.com": {
+            "username": "${WEBLATE_GITHUB_USERNAME}",
+            "token": "${WEBLATE_GITHUB_TOKEN}"
+          }
+        }
+    deploy:
+      resources:
+        limits:
+          memory: 2.5G
+  https-portal:
+    environment:
+      DOMAINS: 'translate.bahai.org -> http://weblate:8080'
+      CLIENT_MAX_BODY_SIZE: 20M
+      PROXY_SEND_TIMEOUT: 3600
+      KEEPALIVE_TIMEOUT: 3600
+    volumes:
+    - /var/cache/nginx:/var/cache/nginx
