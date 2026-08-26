@@ -12,6 +12,7 @@ services:
       WEBLATE_SITE_DOMAIN: translate.bahai.org
       WEBLATE_ADMIN_PASSWORD: "${WEBLATE_ADMIN_PASSWORD}"
       WEBLATE_REQUIRE_LOGIN: 1
+      SENTRY_DSN: "${SENTRY_DSN}"
       WEBLATE_GITHUB_CREDENTIALS: >
         {
           "api.github.com": {
